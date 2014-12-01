@@ -93,8 +93,9 @@ function drag(surface, link) {
         //resets the opacity of the like and dislike to be hidden
         opacityYes.setOpacity(0);
         opacityNo.setOpacity(0);
+        console.log(currentPosition[0])
 
-        if (currentPosition[0] > 200) {
+        if (currentPosition[0] > 100) {
            //Redirect to link if dragged right
             position.set([0,0], {curve : 'easeOutBounce', duration : 300});
             console.log("positive")
@@ -102,7 +103,7 @@ function drag(surface, link) {
             data.time= Date.now();
             analytics(data)
             window.open(link, '_blank');
-        } else if (currentPosition[0] < (-200)) {
+        } else if (currentPosition[0] < (-100)) {
            // Transition out of dragged left
             position.set([-window.innerWidth,0], {curve : 'easeOutBounce', duration : 800});
             console.log("negative")
